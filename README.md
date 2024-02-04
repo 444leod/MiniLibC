@@ -1,2 +1,2 @@
-# NanoTekSpice
-NanoTekSpice mirror repository
+# MiniLibC
+MiniLibC mirror repository
