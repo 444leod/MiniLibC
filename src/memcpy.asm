@@ -1,18 +1,17 @@
 section .text
 global memcpy
 
-; memcpy: fills a block of memory with a specific value
-; Input: rdi - the pointer to the memory block
-;        rsi - the size of the memory block
-;        rdx - the value to fill the memory block with
-; Output: rax - the pointer to the memory block
-//TODO: modify doc
+; memcpy: copies n bytes from memory area src to memory area dest
+; Input: rdi - the pointer to the destination memory block
+;        rsi - the pointer to the source memory block
+;        rdx - the number of bytes to copy
+; Output: rax - the pointer to the destination memory block
 memcpy:
-    mov rax, rdi  ; save the original pointer
+    mov rax, rdi
     xor rcx, rcx
 
 .memcpy_loop:
-    cmp rcx, rdx 
+    cmp rcx, rdx
     je end
     mov al, byte [rsi + rcx]
     mov byte [rdi + rcx], al
