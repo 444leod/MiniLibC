@@ -18,16 +18,17 @@ strcmp:
     je verify_end
     cmp al, bl
     je .increase
-    jne .verify_end
+    jne verify_end
 
 .increase:
     inc rcx
     jmp .strcmp_loop
 
-.verify_end:
-    movzx eax, al
-    sub eax, bl
-    movzx rax, eax
+verify_end:
+    movzx eax, byte [rdi + rcx]
+    movzx ebx, byte [rsi + rcx]
+    sub eax, ebx
+    movsx rax, eax
     jmp end
 
 end:
