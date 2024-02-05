@@ -1,5 +1,5 @@
 ##
-## EPITECH PROJECT,2024
+## EPITECH PROJECT, 2024
 ## MiniLibC
 ## File description:
 ## Makefile
@@ -43,4 +43,3 @@ run: all
 
 .PHONY: all clean fclean re
 .SILENT: run
-
