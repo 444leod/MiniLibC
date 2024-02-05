@@ -1,9 +1,9 @@
-name: Rush3
+name: MiniLibC
 
 on: [push, pull_request]
 
 env:
-  MIRROR_URL: "https://github.com/EpitechPromo2027/B-ASM-400-LIL-4-1-asmminilibc-leo.dumont.git"
+  MIRROR_URL: "git@github.com:EpitechPromo2027/B-ASM-400-LIL-4-1-asmminilibc-leo.dumont.git"
   MAX_REPO_SIZE: "15"
 
 jobs:
