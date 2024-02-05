@@ -37,6 +37,8 @@ fclean: clean
 
 re: fclean all
 
+tests_run:
+
 run: all
 	gcc -fno-builtin ./tests/test.c
 	LD_PRELOAD=./libasm.so ./a.out
