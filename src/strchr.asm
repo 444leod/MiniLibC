@@ -11,7 +11,7 @@ strchr:
 
 strchr_loop:
     cmp byte [rdi + rax], 0
-    je return_null
+    je special_case
     cmp byte [rdi + rax], sil
     jne increment
     jmp return_ptr
@@ -19,6 +19,11 @@ strchr_loop:
 increment:
     inc rax
     jmp strchr_loop
+
+special_case:
+    cmp sil, 0
+    je return_ptr
+    jmp return_null
 
 return_null:
     xor rax, rax
