@@ -11,7 +11,8 @@ SRC = src/strlen.asm \
 		src/strchr.asm \
 		src/memset.asm \
 		src/memcpy.asm \
-		src/strcmp.asm
+		src/strcmp.asm \
+		src/strncmp.asm \
 
 OBJ = $(SRC:.asm=.o)
 
@@ -37,11 +38,22 @@ fclean: clean
 
 re: fclean all
 
-tests_run:
+tests_run: all
+	gcc -fno-builtin ./tests/test.c
+	LD_PRELOAD=./libasm.so ./a.out > test.txt
+	./a.out > test2.txt
+	diff -q test.txt test2.txt >/dev/null 2>&1; \
+    if [ $$? -eq 0 ]; then \
+        echo "SUCCESS"; \
+    else \
+        diff test.txt test2.txt; \
+    fi
+	rm -f test.txt test2.txt
+	rm -f ./a.out
 
 run: all
 	gcc -fno-builtin ./tests/test.c
 	LD_PRELOAD=./libasm.so ./a.out
 
 .PHONY: all clean fclean re
-.SILENT: run
+.SILENT: run tests_run
