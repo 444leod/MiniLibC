@@ -36,5 +36,3 @@ return_ptr:
     lea rax, [rdi + rax]
     ret
 
-section .data
-    len db 0
