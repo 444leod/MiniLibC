@@ -13,6 +13,7 @@ SRC = src/strlen.asm \
 		src/memcpy.asm \
 		src/strcmp.asm \
 		src/strncmp.asm \
+		src/strcasecmp.asm
 
 OBJ = $(SRC:.asm=.o)
 
@@ -54,6 +55,9 @@ tests_run: all
 run: all
 	gcc -fno-builtin ./tests/test.c
 	LD_PRELOAD=./libasm.so ./a.out
+
+tests_run1: re $(NAME)
+	cd test && gcc main.c tests.c -ldl -Wall -Wextra && ./a.out
 
 .PHONY: all clean fclean re
 .SILENT: run tests_run

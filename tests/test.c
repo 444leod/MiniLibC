@@ -110,5 +110,37 @@ int main(int argc, char const *argv[])
         printf("Strncmp result: str11 is equal to str12\n");
     }
 
+        // Test for strcasecmp with equal strings
+    char str13[15] = "Hello";
+    char str14[15] = "HELLO";
+    result = strcasecmp(str13, str14);
+    if(result == 0) {
+        printf("Strcasecmp result: str13 is equal to str14\n");
+    }
+
+    // Test for strcasecmp with non-equal strings
+    char str15[15] = "Hello";
+    char str16[15] = "World";
+    result = strcasecmp(str15, str16);
+    if(result < 0) {
+        printf("Strcasecmp result: str15 is less than str16\n");
+    } else if(result > 0) {
+        printf("Strcasecmp result: str15 is greater than str16\n");
+    } else {
+        printf("Strcasecmp result: str15 is equal to str16\n");
+    }
+
+    // Test for strcasecmp with strings of different lengths
+    char str17[15] = "Hello";
+    char str18[15] = "HELLO, WORLD!";
+    result = strcasecmp(str17, str18);
+    if(result < 0) {
+        printf("Strcasecmp result: str17 is less than str18\n");
+    } else if(result > 0) {
+        printf("Strcasecmp result: str17 is greater than str18\n");
+    } else {
+        printf("Strcasecmp result: str17 is equal to str18\n");
+    }
+
     return 0;
 }
