@@ -18,6 +18,7 @@ SRC = src/strlen.asm \
 		src/strpbrk.asm \
 		src/strstr.asm \
 		src/strcspn.asm \
+		src/memmove.asm \
 
 OBJ = $(SRC:.asm=.o)
 
