@@ -9,6 +9,7 @@ global strncmp
 strncmp:
     xor rax, rax
     xor rcx, rcx
+    push rbx
 
 .strncmp_loop:
     cmp rcx, rdx
@@ -39,4 +40,5 @@ return_zero:
     jmp end
 
 end:
+    pop rbx
     ret

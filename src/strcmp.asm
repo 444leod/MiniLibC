@@ -8,6 +8,7 @@ global strcmp
 strcmp:
     xor rax, rax
     xor rcx, rcx
+    push rbx
 
 .strcmp_loop:
     mov al, [rdi + rcx]
@@ -32,4 +33,5 @@ verify_end:
     jmp end
 
 end:
+    pop rbx
     ret

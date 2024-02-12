@@ -8,6 +8,7 @@ global strcasecmp
 strcasecmp:
     xor rax, rax
     xor rcx, rcx
+    push rbx
 
 .strcasecmp_loop:
     mov al, [rdi + rcx]
@@ -58,5 +59,6 @@ verify_end:
     jmp end
 
 end:
+    pop rbx
     ret
 
