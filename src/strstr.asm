@@ -7,7 +7,14 @@ global strstr
 ; Output: rax - pointer to the first occurrence of the substring in the string, or NULL if the substring is not found
 strstr:
     xor rax, rax
-    jmp strstr_loop
+    jmp special_case
+
+special_case:
+    mov r8b, byte [rdi]
+    cmp byte [rsi], r8b
+    jne strstr_loop
+    cmp r8b, 0
+    je return_ptr
 
 strstr_loop:
     xor rcx, rcx
