@@ -22,7 +22,7 @@ memmove:
     jmp .memmove_loop
 
 .memmove_loop_inverse:
-    cmp rdx, -1
+    cmp rdx, 0
     je end
     mov al, byte [rsi + rdx - 1]
     mov byte [rdi + rdx - 1], al
