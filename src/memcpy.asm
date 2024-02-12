@@ -7,7 +7,6 @@ global memcpy
 ;        rdx - the number of bytes to copy
 ; Output: rax - the pointer to the destination memory block
 memcpy:
-    mov rax, rdi
     xor rcx, rcx
 
 .memcpy_loop:
@@ -19,4 +18,5 @@ memcpy:
     jmp .memcpy_loop
 
 end:
+    mov rax, rdi
     ret

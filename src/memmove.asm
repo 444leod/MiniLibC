@@ -7,7 +7,6 @@ global memmove
 ;        rdx - the number of bytes to copy
 ; Output: rax - the pointer to the destination memory block
 memmove:
-    mov rax, rdi
     xor rcx, rcx
     cmp rdi, rsi
     jge .memmove_loop_inverse
@@ -30,4 +29,5 @@ memmove:
     jmp .memmove_loop_inverse
 
 end:
+    mov rax, rdi
     ret

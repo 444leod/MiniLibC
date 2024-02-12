@@ -33,4 +33,6 @@
 .vscode/settings.json
 .vscode/launch.json
 .vscode/c_cpp_properties.json
+test2
+unit_tests
 test
