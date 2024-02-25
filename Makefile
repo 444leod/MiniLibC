@@ -19,6 +19,8 @@ SRC = src/strlen.asm \
 		src/strstr.asm \
 		src/strcspn.asm \
 		src/memmove.asm \
+		src/index.asm \
+		src/rindex.asm
 
 TESTS_SRC	=	test2/test.c			\
 				test2/test_strlen.c		\
